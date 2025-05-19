@@ -69,6 +69,7 @@
     - name: Install CUDA (RHEL 9)
       ansible.builtin.package:
         name: "{{ cuda_rhel9_package_name }}"
-        state: installed
+        state: present
         update_cache: true
+        allowerasing: true
       when: install_cuda | bool
